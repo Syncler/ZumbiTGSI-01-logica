@@ -1,0 +1,51 @@
+import random
+from ImplementandoFuncoesArvoreBinaria import BinarySearchTree
+
+#especificar semente - para gerar mesmos números aleatorios
+random.seed(33)
+
+#criar arvore aleatoria
+#values = random.sample(range(0,100), 53)
+#bst = BinarySearchTree()
+#for v in values:
+#    bst.insert(v)
+#ordem crescente
+#bst.inorder_traversal()
+
+#bst=variavel = arvore brinaria de busca em ingles
+#random = aleatorio
+
+#arvore para remoção
+def extended_tree():
+    values = [50, 83, 35, 79, 101, 15, 85, 9, 20, 77, 86]
+    tree = BinarySearchTree()
+    for v in values:
+        tree.insert(v)
+    return tree
+#construção da arvore
+bst = extended_tree()
+#ordem simetrica - crescente
+bst.inorder_traversal()
+#Oordenação em nivel
+print('\n-----')
+bst.levelorder_traversal()
+#remoção
+print('\n-----')
+v = 9
+bst.remove(v)
+print("Posterior remoção {}".format(v))
+#exibir em orgem simetrica
+bst.inorder_traversal()
+print("\n----")
+#MINIMO E MAXIMO
+print("MÁXIMO:", bst.max())
+print("MINIMO:", bst.min())
+#BUSCA NA ARVORE BINARIA:
+items = [9, 8, 39, 12, 43, 101, 11]
+for item in items:
+    r = bst.search(item)
+    if r is None:
+        print(item, 'não encontrado')
+    else:
+        print(r.root.data, 'encontrado')
+
